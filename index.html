@@ -233,6 +233,126 @@
             
               
                 
+                <a class="post-title-link" href="/2016/06/13/ImuPreintegrationOnManifold1/" itemprop="url">
+                  IMU Preintegration On Manifold(1)
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-06-13T14:51:52+08:00" content="2016-06-13">
+              2016-06-13
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/Math/" itemprop="url" rel="index">
+                    <span itemprop="name">Math</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <p>$<br>\def\SOthree{SO(3)}<br>\def\Exp{\textrm{Exp}}<br>\def\Log{\textrm{Log}}<br>\def\dt{\Delta t}<br>\def\Skew#1{[#1]_{\times}}<br>\def\MatI#1{\textbf{I}_{ #1\times#1}}<br>\def\MatZ#1{\textbf{0}_{ #1\times#1}}<br>$</p>
+<h1 id="1-SOthree-Group"><a href="#1-SOthree-Group" class="headerlink" title="1 $\SOthree$ Group"></a>1 $\SOthree$ Group</h1><p>关于$\SOthree$的介绍略过，这里只列出几个近似的公式：<br>$\Exp(\delta\theta)\approx\textbf{I}+\Skew{\theta} \tag{1}$<br>$\Exp(\theta+\delta\theta)\approx\Exp(\theta)\Exp(J_{r}(\theta)\delta\theta) \tag{2}$<br>$\Exp(\theta)\Exp(\delta\theta)\approx\Exp(\theta+J_{r}^{-1}(\theta)\delta\theta) \tag{3}$</p>
+<p>$\Exp(\delta\phi)\Exp(\delta\theta)\approx\Exp(\delta\phi+J_{r}^{-1}(\delta\phi)\delta\theta)\approx\Exp(\delta\phi+\delta\theta) \tag{4}$</p>
+<p>以及Adjoint表示：</p>
+<p>$\Exp(\theta)R=R\Exp(R^{T}\theta) \tag{5}$</p>
+<h1 id="2-2-IMU-Preintegration-measurements"><a href="#2-2-IMU-Preintegration-measurements" class="headerlink" title="2 2 IMU Preintegration measurements"></a>2 2 IMU Preintegration measurements</h1><h2 id="2-1-Integration-measurements"><a href="#2-1-Integration-measurements" class="headerlink" title="2.1 Integration measurements"></a>2.1 Integration measurements</h2><p>给定初值，在i和j时刻对imu的角速度和加速度进行积分，可以计算j时刻相对于i时刻的姿态：<br>$<br>\begin{aligned}R_{j} &amp; =R_{i}\prod_{k=i}^{j-1}\Exp((\tilde{w}_{k}-b_{i}^{g}-\eta_{k}^{gd})\dt)\\<br>v_{j} &amp; =v_{i}+\sum_{k=i}^{j-1}(g+R_{k}(\tilde{a}_{k}-b_{i}^{a}-\eta_{k}^{ad}))\dt\\<br>p_{j} &amp; =p_{i}+\sum_{k=i}^{j-1}v_{k}\Delta t+\frac{1}{2}\sum_{k=i}^{j-1}(g+R_{k}(\tilde{a}_{k}-b_{i}^{a}-\eta_{k}^{ad}))\dt^{2}<br>\end{aligned}<br>\tag{6}<br>$<br>
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2016/06/13/ImuPreintegrationOnManifold1/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
                 <a class="post-title-link" href="/2016/06/02/QuaternionInEigen/" itemprop="url">
                   Quaternion In Eigen
                 </a>
@@ -369,7 +489,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">1</span>
+              <span class="site-state-item-count">2</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -535,7 +655,7 @@
       }
     });
   </script>
-  <script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  <script type="text/javascript" src="//cdn.bootcss.com/mathjax/2.6.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 
 
   
